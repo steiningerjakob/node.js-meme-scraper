@@ -1,12 +1,15 @@
-// import modules
+// import modules:
+
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 const fs = require('node:fs');
 
-// declare global variable
+// declare global variable:
+
 const targetWebsite = 'https://memegen-link-examples-upleveled.netlify.app/';
 
-// declare function to fetch image data and create a numbered file with a .jpg file extension in the memes folder
+// declare function to fetch image data and create a numbered file with a .jpg file extension in the memes folder:
+
 async function download(img, i) {
   const response = await fetch(img);
   const buffer = await response.buffer();
@@ -15,11 +18,12 @@ async function download(img, i) {
   );
 }
 
-// create array with image data
+// create array with image data:
+
 const getLinks = async () => {
   // get html text from the website
   const response = await fetch(targetWebsite);
-  // using await to ensure that the promise resolves
+  // use await to ensure that the promise resolves
   const body = await response.text();
   // parse html using cheerio
   const $ = cheerio.load(body);
@@ -27,7 +31,6 @@ const getLinks = async () => {
   const imgList = [];
   // extract img URLs via <src> attribute and push into array
   $('img').each((i, url) => {
-    // console.log(url.attribs.src);
     if (i < 10) {
       imgList.push(url.attribs.src);
     }
