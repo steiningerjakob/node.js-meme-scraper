@@ -1,10 +1,10 @@
 {
-  "name": "y",
-  "version": "y",
-  "main": "y",
-  "repository": "y",
-  "author": "y",
-  "license": "y",
+  "name": "node.js-meme-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/steiningerjakob/node.js-meme-scraper.git",
+  "author": "“Jakob <steiningerjakob@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.37",
     "@types/react": "^17.0.3",
@@ -26,5 +26,9 @@
     "eslint-plugin-testing-library": "^4.0.1",
     "eslint-plugin-unicorn": "^31.0.0",
     "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.6",
+    "node-fetch": "^2.6.1"
   }
 }
