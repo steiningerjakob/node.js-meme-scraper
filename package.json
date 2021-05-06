@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
+    "@upleveled/babel-plugin-remove-node-prefix": "^1.0.1",
     "@upleveled/eslint-config-upleveled": "1.12.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.23.0",
@@ -31,5 +32,8 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.6",
     "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "start": "babel-node --plugins @upleveled/remove-node-prefix index.js"
   }
 }

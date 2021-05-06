@@ -389,6 +389,11 @@
     "@typescript-eslint/types" "4.22.1"
     eslint-visitor-keys "^2.0.0"
 
+"@upleveled/babel-plugin-remove-node-prefix@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@upleveled/babel-plugin-remove-node-prefix/-/babel-plugin-remove-node-prefix-1.0.1.tgz#4694c20d976b1ab324b2ea3dd1cbb74f0fb32d75"
+  integrity sha512-YOVTXh2KzV6+AFN280kH8Xat/XC/m3CPqZO1GGcvo/F/9l4lfPctwTZxcJ0zy5oN+mJZQrHk4Ian10Mn2g8a/Q==
+
 "@upleveled/eslint-config-upleveled@1.12.0":
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/@upleveled/eslint-config-upleveled/-/eslint-config-upleveled-1.12.0.tgz#b1134af15535bb18e7ff27af4780af788a9b0735"

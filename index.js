@@ -2,7 +2,7 @@
 
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
-const fs = require('fs');
+const fs = require('node:fs');
 
 // declare global variable:
 
