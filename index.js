@@ -8,6 +8,14 @@ const fs = require('node:fs');
 
 const targetWebsite = 'https://memegen-link-examples-upleveled.netlify.app/';
 
+// good practice: create filder for memes in the code using fs.mkdir
+
+fs.mkdir('./memes', { recursive: true }, (err) => {
+  if (err) {
+    return console.error(err);
+  }
+});
+
 // declare function to fetch image data and create a numbered file with a .jpg file extension in the memes folder:
 
 async function download(img, i) {
