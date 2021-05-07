@@ -11,35 +11,43 @@ const targetWebsite = 'https://memegen-link-examples-upleveled.netlify.app/';
 // declare function to fetch image data and create a numbered file with a .jpg file extension in the memes folder:
 
 async function download(img, i) {
-  const response = await fetch(img);
-  const buffer = await response.buffer();
-  fs.writeFile(`./memes/image${i + 1}.jpg`, buffer, () =>
-    console.log('finished downloading!'),
-  );
+  try {
+    const response = await fetch(img);
+    const buffer = await response.buffer();
+    fs.writeFile(`./memes/image${i + 1}.jpg`, buffer, () =>
+      console.log('finished downloading!'),
+    );
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 // create array with image data:
 
-const getLinks = async () => {
-  // get html text from the website
-  const response = await fetch(targetWebsite);
-  // use await to ensure that the promise resolves
-  const body = await response.text();
-  // parse html using cheerio
-  const $ = cheerio.load(body);
-  // create array
-  const imgList = [];
-  // extract img URLs via <src> attribute and push into array
-  $('img').each((i, url) => {
-    if (i < 10) {
-      imgList.push(url.attribs.src);
+async function getLinks() {
+  try {
+    // get html text from the website
+    const response = await fetch(targetWebsite);
+    // use await to ensure that the promise resolves
+    const body = await response.text();
+    // parse html using cheerio
+    const $ = cheerio.load(body);
+    // create array
+    const imgList = [];
+    // extract img URLs via <src> attribute and push into array
+    $('img').each((i, url) => {
+      if (i < 10) {
+        imgList.push(url.attribs.src);
+      }
+    });
+    // loop over the array and call download function
+    for (let i = 0; i < imgList.length; i++) {
+      download(imgList[i], i);
     }
-  });
-  // loop over the array and call download function
-  for (let i = 0; i < imgList.length; i++) {
-    download(imgList[i], i);
+  } catch (err) {
+    console.log(err);
   }
-};
+}
 
 getLinks();
 
