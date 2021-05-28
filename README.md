@@ -6,7 +6,7 @@ It is a command line app that scrapes a meme website and saves the first 10 imag
 
 ## Usage:
 
-Just type in *node index.js* in the command line.
+Just type in *node index.js* in the command line (needs Node.js v16+)
 
 ## Output: 
 
