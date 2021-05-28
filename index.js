@@ -8,7 +8,7 @@ const fs = require('node:fs');
 
 const targetWebsite = 'https://memegen-link-examples-upleveled.netlify.app/';
 
-// good practice: create filder for memes in the code using fs.mkdir
+// good practice: create folder for memes in the code using fs.mkdir
 
 fs.mkdir('./memes', { recursive: true }, (err) => {
   if (err) {
