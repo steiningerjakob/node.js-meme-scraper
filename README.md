@@ -6,11 +6,11 @@ It is a command line app that scrapes a meme website and saves the first 10 imag
 
 ## Usage:
 
-Just type in *node index.js* in the command line.
+Just type in _node index.js_ in the command line (needs Node.js v16+).
 
-## Output: 
+## Output:
 
-The application will download the first 10 images from the website (https://memegen-link-examples-upleveled.netlify.app/) and save it in the memes folder that is being created by the application. 
+The application will download the first 10 images from the website (https://memegen-link-examples-upleveled.netlify.app/) and save it in the memes folder that is being created by the application.
 
 ## Sources used:
 
